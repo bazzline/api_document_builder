@@ -2,6 +2,7 @@
 
 Api document builder centralize api documentation generation and updating of existing projects.
 Use it as a cronjob to have the latest documentation in time.
+Available at [packagist](https://packagist.org/packages/net_bazzline/api_document_builder) and [openhub.net](https://openhub.net/p/api_document_builder).
 
 # Work Flow
 
