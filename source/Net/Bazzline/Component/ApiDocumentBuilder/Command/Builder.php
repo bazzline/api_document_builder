@@ -92,7 +92,11 @@ class Builder
             echo PHP_EOL;
             echo 'generating output' . PHP_EOL;
             //@todo build index.html
-            file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title']));
+            if (isset($configuration['tracking_snippet'])) {
+                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title']));
+            } else {
+                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title'], $configuration['tracking_snippet']));
+            }
             echo 'done' . PHP_EOL;
         } else {
             $this->printUsage();
@@ -109,12 +113,12 @@ class Builder
     /**
      * @param array $projects
      * @param string $title
+     * @param string $trackingSnippet
      * @return string
      */
-    private function getContent(array $projects, $title)
+    private function getContent(array $projects, $title, $trackingSnippet = null)
     {
-        $content = '
-<html>
+        $content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <title>' . $title . '</title>
@@ -141,7 +145,7 @@ class Builder
         </table>
         <p>
             Last updated at ' . date('Y-m-d H:i:s') . '
-        </p>
+        </p>' . (!is_null($trackingSnippet) ? PHP_EOL . $trackingSnippet . PHP_EOL : '') . '
     </body>
 </html>';
 

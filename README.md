@@ -50,7 +50,10 @@ lynx example/output/index.html
         * add "keep_cache" (boolean) value
         * implement cache and output cleanup (if project is moved or deleted etc.)
         * supporting multiple project tags 
-* [1.0.1](https://github.com/bazzline/api_document_builder/tree/1.0.0)
+* [1.0.2](https://github.com/bazzline/api_document_builder/tree/1.0.2)
+    * added optional "tracking_snippet" support for configuration
+    * made index.html valid
+* [1.0.1](https://github.com/bazzline/api_document_builder/tree/1.0.1)
     * updated dependency
 * [1.0.0](https://github.com/bazzline/api_document_builder/tree/1.0.0)
     * initial release
