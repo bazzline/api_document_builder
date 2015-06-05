@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @author stev leibelt <artodeto@bazzline.net>
+ * @since 2015-05-24 
+ */
+
+$possiblePathsToComposerAutoloadFile = array(
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../../vendor/autoload.php',
+    __DIR__ . '/../vendor/autoload.php'
+);
+$pathToAutoloadFileNotFound = true;
+$pathToAutoloadFile         = null;
+
+foreach ($possiblePathsToComposerAutoloadFile as $path) {
+    if (file_exists($path)) {
+        $pathToAutoloadFile         = $path;
+        $pathToAutoloadFileNotFound = false;
+        break;
+    }
+}
+
+if ($pathToAutoloadFileNotFound) {
+    echo 'could not find composer autoload.php, no composer installed?' . PHP_EOL;
+    exit(1);
+}
+
+require_once $pathToAutoloadFile;
+
+$command = new \Net\Bazzline\Component\ApiDocumentBuilder\Command\Builder($argv);
+$command->execute();
