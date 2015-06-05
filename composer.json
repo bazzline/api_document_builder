@@ -8,7 +8,7 @@
         "apigen/apigen": " 4.1.1",
         "net_bazzline/component_requirement": "1.1.1",
         "net_bazzline/php_component_cli_arguments": "1.0.1",
-        "net_bazzline/php_component_command_collection": "0.0.3",
+        "net_bazzline/php_component_command_collection": "0.0.4",
         "net_bazzline/php_component_locator_generator": "2.0.0",
         "net_bazzline/php_component_process_pipe": "1.0.1",
         "php": ">=5.3.3"
