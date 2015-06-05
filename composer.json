@@ -1,8 +1,8 @@
 {
     "name": "net_bazzline/api_document_builder",
     "description": "free as in freedom php api document builder",
-    "keywords": ["php", "free as in freedom", "lgpl", "api", "document", "builder"],
-    "type": "library",
+    "keywords": ["php", "free as in freedom", "gpl", "api", "document", "builder"],
+    "type": "project",
     "minimum-stability": "dev",
     "require": {
         "apigen/apigen": " 4.1.1",
@@ -17,7 +17,7 @@
         "mikey179/vfsstream": "1.5.0",
         "phpunit/phpunit": "4.6.9"
     },
-    "license": "LGPLv3",
+    "license": "GPLv3",
     "authors": [
         {
             "name": "Stev Leibelt",
