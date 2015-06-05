@@ -16,6 +16,16 @@ Use it as a cronjob to have the latest documentation in time.
 ./bin/net_bazzline_api_document_builder path/to/configuration.php
 ```
 
+# Example
+
+```
+mkdir -p net_bazzline/api_document_builder
+cd net_bazzline/api_document_builder
+git clone https://github.com/bazzline/api_document_builder/ .
+./bin/net_bazzline_api_document_builder example/configuration.php
+lynx example/output/index.html
+```
+
 # History
 
 * upcomming

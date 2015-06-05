@@ -21,5 +21,5 @@ return array(
             'url'           => 'https://github.com/bazzline/php_component_cli_arguments'
         )
     ),
-    'title' => 'code.bazzline.net'
+    'title' => 'www.bazzline.net'
 );
