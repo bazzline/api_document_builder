@@ -51,12 +51,15 @@ class Builder
             //@todo implement validation
             $configuration  = require_once $pathToConfigurationFile;
 
-            $cwd            = getcwd();
-            $pathToCache    = $configuration['paths']['cache'];
-            $pathToTarget   = $configuration['paths']['target'];
-            $projects       = array();
+            $cwd                = getcwd();
+            $numberOfProjects   = count($configuration['projects']);
+            $pathToCache        = $configuration['paths']['cache'];
+            $pathToTarget       = $configuration['paths']['target'];
+            $progressBar        = $locator->getCliProgressBar();
+            $projects           = array();
 
-            echo 'updating projects ' . count($configuration['projects']) . PHP_EOL;
+            $progressBar->setTotalSteps($numberOfProjects);
+            echo 'updating projects ' . $numberOfProjects . PHP_EOL;
 
             foreach ($configuration['projects'] as $project) {
                 $git                = $locator->getGit();
@@ -87,15 +90,15 @@ class Builder
                     'title' => $project['title'],
                     'url'   => $project['url']
                 );
-                echo '.';
+                $progressBar->forward();
             }
-            echo PHP_EOL;
+            $progressBar->isFinished();
             echo 'generating output' . PHP_EOL;
             //@todo build index.html
             if (isset($configuration['tracking_snippet'])) {
-                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title']));
-            } else {
                 file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title'], $configuration['tracking_snippet']));
+            } else {
+                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title']));
             }
             echo 'done' . PHP_EOL;
         } else {

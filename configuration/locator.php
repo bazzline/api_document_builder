@@ -13,6 +13,12 @@ return array(
             'is_shared'     => true
         ),
         array(
+            'alias'         => 'CliProgressBar',
+            'class_name'    => '\Net\Bazzline\Component\Cli\ProgressBar\ProgressBar',
+            'is_factory'    => false,
+            'is_shared'     => true
+        ),
+        array(
             'alias'         => 'ApigenBuilder',
             'class_name'    => '\Net\Bazzline\Component\ApiDocumentBuilder\Builder\Apigen',
             'is_factory'    => false,
