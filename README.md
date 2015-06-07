@@ -50,6 +50,8 @@ lynx example/output/index.html
         * add "keep_cache" (boolean) value
         * implement cache and output cleanup (if project is moved or deleted etc.)
         * supporting multiple project tags 
+* [1.0.4](https://github.com/bazzline/api_document_builder/tree/1.0.4)
+    * fixed [issue/1](https://github.com/bazzline/api_document_builder/issues/1)
 * [1.0.3](https://github.com/bazzline/api_document_builder/tree/1.0.3)
     * implemented usage of [progress bar](https://github.com/bazzline/php_component_cli_progress_bar) component
 * [1.0.2](https://github.com/bazzline/api_document_builder/tree/1.0.2)
