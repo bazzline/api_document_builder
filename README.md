@@ -53,7 +53,7 @@ lynx example/output/index.html
         * supporting multiple project tags 
 * [1.1.0](https://github.com/bazzline/api_document_builder/tree/1.1.0)
     * implemented feature request of [issue/2](https://github.com/bazzline/api_document_builder/issues/2)
-    * see [migration steps](https://github.com/bazzline/api_document_builder/blob/master/migration/from_1.0.x.to.1.1.0.md)
+    * see [migration steps](https://github.com/bazzline/api_document_builder/blob/master/migration/from_1.0.x_to_1.1.0.md)
 * [1.0.4](https://github.com/bazzline/api_document_builder/tree/1.0.4)
     * fixed [issue/1](https://github.com/bazzline/api_document_builder/issues/1)
 * [1.0.3](https://github.com/bazzline/api_document_builder/tree/1.0.3)
