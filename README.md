@@ -49,7 +49,11 @@ lynx example/output/index.html
         * create factories
         * add "keep_cache" (boolean) value
         * implement cache and output cleanup (if project is moved or deleted etc.)
+            * validate git pull return message
         * supporting multiple project tags 
+* [1.1.0](https://github.com/bazzline/api_document_builder/tree/1.1.0)
+    * implemented feature request of [issue/2](https://github.com/bazzline/api_document_builder/issues/2)
+    * see [migration steps](https://github.com/bazzline/api_document_builder/blob/master/migration/from_1.0.x.to.1.1.0.md)
 * [1.0.4](https://github.com/bazzline/api_document_builder/tree/1.0.4)
     * fixed [issue/1](https://github.com/bazzline/api_document_builder/issues/1)
 * [1.0.3](https://github.com/bazzline/api_document_builder/tree/1.0.3)

@@ -6,13 +6,8 @@
 
 namespace Net\Bazzline\Component\ApiDocumentBuilder\Command;
 
-use Net\Bazzline\Component\ApiDocumentBuilder\Builder\Apigen;
-use Net\Bazzline\Component\ApiDocumentBuilder\Builder\BuilderInterface;
 use Net\Bazzline\Component\ApiDocumentBuilder\Service\ApplicationLocator;
 use Net\Bazzline\Component\Cli\Arguments\Arguments;
-use Net\Bazzline\Component\CommandCollection\Filesystem\Create;
-use Net\Bazzline\Component\CommandCollection\Filesystem\Remove;
-use Net\Bazzline\Component\CommandCollection\Vcs\Git;
 
 class Builder
 {
@@ -94,12 +89,27 @@ class Builder
             }
             $progressBar->isFinished();
             echo 'generating output' . PHP_EOL;
-            //@todo build index.html
-            if (isset($configuration['tracking_snippet'])) {
-                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title'], $configuration['tracking_snippet']));
+
+            //@todo move to separate method
+            if (!isset($configuration['template'])) {
+                $configuration['template'] = array(
+                    'layout'        => __DIR__ . '/../Template/layout.html',
+                    'project_view'  => __DIR__ . '/../Template/project_view.html'
+                );
             } else {
-                file_put_contents($pathToTarget . '/index.html', $this->getContent($projects, $configuration['title']));
+                if (!isset($configuration['template']['layout'])) {
+                    $configuration['template']['layout'] = __DIR__ . '/../Template/layout.html';
+                }
+                if (!isset($configuration['template']['project_view'])) {
+                    $configuration['template']['project_view'] = __DIR__ . '/../Template/project_view.html';
+                }
             }
+            $this->renderOutput(
+                $pathToTarget . '/index.html',
+                $projects, $configuration['title'],
+                $configuration['template']['layout'],
+                $configuration['template']['project_view']
+            );
             echo 'done' . PHP_EOL;
         } else {
             $this->printUsage();
@@ -114,44 +124,33 @@ class Builder
     }
 
     /**
+     * @param string $fileName
      * @param array $projects
      * @param string $title
-     * @param string $trackingSnippet
-     * @return string
+     * @param string $pathToLayout
+     * @param string $pathToProjectView
      */
-    private function getContent(array $projects, $title, $trackingSnippet = null)
+    private function renderOutput($fileName, array $projects, $title, $pathToLayout, $pathToProjectView)
     {
-        $content = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>' . $title . '</title>
-    </head>
-    <body>
-        <h1>Available Projects</h1>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Link to Code</th>
-                <th>Link to API</th>
-            </tr>';
+        //@todo implement validation
+        $layout         = file_get_contents($pathToLayout);
+        $projectData    = '';
+        $projectView    = file_get_contents($pathToProjectView);
 
         foreach ($projects as $project) {
-            $content .= '
-            <tr>
-                <td>' . $project['title'] . '</td>
-                <td><a href="' . $project['url'] . '" title="code for ' . $project['title'] . '">code</a></td>
-                <td><a href="' . $project['path'] . '/index.html" title="api for ' . $project['title'] . '">api</a></td>
-            </tr>';
+            $projectData .= str_replace(
+                    array('{path}', '{title}', '{url}'),
+                    array($project['path'], $project['title'], $project['url']),
+                    $projectView
+            ) . PHP_EOL;
         }
 
-        $content .= '
-        </table>
-        <p>
-            Last updated at ' . date('Y-m-d H:i:s') . '
-        </p>' . (!is_null($trackingSnippet) ? PHP_EOL . $trackingSnippet . PHP_EOL : '') . '
-    </body>
-</html>';
+        $layoutData = str_replace(
+            array('{last_updated_at}', '{projects}', '{title}'),
+            array(date('Y-m-d H:i:s'), $projectData, $title),
+            $layout
+        );
 
-        return $content;
+        file_put_contents($fileName, $layoutData);
     }
 }

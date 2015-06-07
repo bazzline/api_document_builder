@@ -21,5 +21,9 @@ return array(
             'url'           => 'https://github.com/bazzline/php_component_cli_arguments'
         )
     ),
+    'template' => array(
+        'layout'        => __DIR__ . '/layout.html',
+        'project_view'  => __DIR__ . '/project_view.html'
+    ),
     'title' => 'www.bazzline.net'
 );
