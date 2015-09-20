@@ -32,7 +32,9 @@ lynx example/output/index.html
 * upcomming
     * @todo
         * add link to current / latest tag (<path>/latest-release)
+            * example link: https://github.com/bazzline/php_component_database_file_storage/releases/tag/0.6.2
         * add links for each tag/release
+        * add optional link to "demo page"
         * refactor by using the [process pipe](https://github.com/bazzline/php_component_process_pipe) component
         * refactor by using the [requirement](https://github.com/bazzline/php_component_requirement) component
         * implement unit tests
