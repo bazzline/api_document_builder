@@ -31,6 +31,7 @@ lynx example/output/index.html
 
 * upcomming
     * @todo
+        * implement usage of [template](https://github.com/bazzline/php_component_template/)
         * add link to current / latest tag (<path>/latest-release)
             * example link: https://github.com/bazzline/php_component_database_file_storage/releases/tag/0.6.2
         * add links for each tag/release
