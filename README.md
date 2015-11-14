@@ -57,6 +57,8 @@ lynx example/output/index.html
             * validate git pull return message
         * supporting multiple project tags 
     * updated dependency
+* [1.1.6](https://github.com/bazzline/api_document_builder/tree/1.1.5) - released at 14.11.2015
+    * updated dependency
 * [1.1.5](https://github.com/bazzline/api_document_builder/tree/1.1.5) - released at 08.11.2015
     * updated dependency
 * [1.1.4](https://github.com/bazzline/api_document_builder/tree/1.1.4) - released at 25.09.2015
