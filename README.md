@@ -4,6 +4,8 @@ Api document builder centralize api documentation generation and updating of exi
 Use it as a cronjob to have the latest documentation in time.
 Available at [packagist](https://packagist.org/packages/net_bazzline/api_document_builder) and [openhub.net](https://openhub.net/p/api_document_builder).
 
+[https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651/badge.svg?style=flat](https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651#dialog_dependency_badge)
+
 # Work Flow
 
 * iterating over collection of project paths
