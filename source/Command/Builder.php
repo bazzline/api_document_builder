@@ -28,7 +28,7 @@ class Builder
         $this->locator      = new ApplicationLocator();
         $this->arguments    = $this->locator->getCliArguments();
 
-        $this->arguments->setArguments($arguments);
+        $this->arguments->parseArguments($arguments);
         $this->source   = basename(array_shift($arguments));
     }
 
