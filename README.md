@@ -59,7 +59,9 @@ lynx example/output/index.html
         * implement cache and output cleanup (if project is moved or deleted etc.)
             * validate git pull return message
         * supporting multiple project tags 
+* [1.2.1](https://github.com/bazzline/api_document_builder/tree/1.2.1) - released at 29.02.2016
     * fixed broken image for version eye
+    * updated dependency
 * [1.2.0](https://github.com/bazzline/api_document_builder/tree/1.2.0) - released at 29.02.2016
     * moved to psr-4 autoloading
 * [1.1.9](https://github.com/bazzline/api_document_builder/tree/1.1.9) - released at 24.01.2016
