@@ -4,7 +4,7 @@ Api document builder centralize api documentation generation and updating of exi
 Use it as a cronjob to have the latest documentation in time.
 Available at [packagist](https://packagist.org/packages/net_bazzline/api_document_builder) and [openhub.net](https://openhub.net/p/api_document_builder).
 
-[https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651/badge.svg?style=flat](https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651#dialog_dependency_badge)
+[!https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651/badge.svg?style=flat](https://www.versioneye.com/user/projects/55f5a588ad2f68000d000651#dialog_dependency_badge)
 
 # Work Flow
 
@@ -58,6 +58,7 @@ lynx example/output/index.html
         * implement cache and output cleanup (if project is moved or deleted etc.)
             * validate git pull return message
         * supporting multiple project tags 
+    * fixed broken image for version eye
 * [1.2.0](https://github.com/bazzline/api_document_builder/tree/1.2.0) - released at 29.02.2016
     * moved to psr-4 autoloading
 * [1.1.9](https://github.com/bazzline/api_document_builder/tree/1.1.9) - released at 24.01.2016
@@ -92,3 +93,7 @@ lynx example/output/index.html
     * updated dependency
 * [1.0.0](https://github.com/bazzline/api_document_builder/tree/1.0.0)
     * initial release
+
+# Final Words
+
+Star it if you like it :-). Add issues if you need it. Pull patches if you enjoy it. Write a blog entry if you use it. [Donate something](https://gratipay.com/~stevleibelt) if you love it :-].
