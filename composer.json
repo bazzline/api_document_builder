@@ -1,7 +1,17 @@
 {
     "name": "net_bazzline/api_document_builder",
     "description": "free as in freedom php api document builder",
-    "keywords": ["php", "free as in freedom", "gpl", "api", "document", "builder"],
+    "keywords": [
+        "bazzline",
+        "psr",
+        "psr-4",
+        "php",
+        "free as in freedom",
+        "gpl",
+        "api",
+        "document",
+        "builder"
+    ],
     "type": "project",
     "minimum-stability": "dev",
     "require": {
@@ -16,9 +26,9 @@
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
-        "phpunit/phpunit": "~4.8||~5.0"
+        "phpunit/phpunit": "~4.8||~5.2"
     },
-    "license": "GPLv3",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Stev Leibelt",
@@ -31,9 +41,8 @@
         "bin/net_bazzline_api_document_builder"
     ],
     "autoload": {
-        "psr-0": {
-            "Net\\Bazzline\\Component\\ApiDocumentBuilder": "source/",
-            "Test\\Net\\Bazzline\\Component\\ApiDocumentBuilder": "test/"
+        "psr-4": {
+            "Net\\Bazzline\\Component\\ApiDocumentBuilder\\": "source/"
         }
     }
 }
