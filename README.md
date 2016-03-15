@@ -59,6 +59,8 @@ lynx example/output/index.html
         * implement cache and output cleanup (if project is moved or deleted etc.)
             * validate git pull return message
         * supporting multiple project tags 
+* [1.2.2](https://github.com/bazzline/api_document_builder/tree/1.2.2) - released at 15.03.2016
+    * updated dependencies
 * [1.2.1](https://github.com/bazzline/api_document_builder/tree/1.2.1) - released at 29.02.2016
     * fixed broken image for version eye
     * updated dependency
