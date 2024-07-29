@@ -16,14 +16,14 @@ class ApplicationLocator
     /**
      * @var $sharedInstancePool
      */
-    private $sharedInstancePool = array();
+    private $sharedInstancePool = [];
 
     /**
      * @return \Net\Bazzline\Component\Cli\Arguments\Arguments
      */
     public function getCliArguments()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\Cli\Arguments\Arguments');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\Cli\Arguments\Arguments::class);
     }
 
     /**
@@ -31,7 +31,7 @@ class ApplicationLocator
      */
     public function getCliProgressBar()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\Cli\ProgressBar\ProgressBar');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\Cli\ProgressBar\ProgressBar::class);
     }
 
     /**
@@ -39,7 +39,7 @@ class ApplicationLocator
      */
     public function getApigenBuilder()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\ApiDocumentBuilder\Builder\Apigen');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\ApiDocumentBuilder\Builder\Apigen::class);
     }
 
     /**
@@ -47,7 +47,7 @@ class ApplicationLocator
      */
     public function getCreateDirectory()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\CommandCollection\Filesystem\Create');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\CommandCollection\Filesystem\Create::class);
     }
 
     /**
@@ -55,7 +55,7 @@ class ApplicationLocator
      */
     public function getGit()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\CommandCollection\Vcs\Git');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\CommandCollection\Vcs\Git::class);
     }
 
     /**
@@ -63,7 +63,7 @@ class ApplicationLocator
      */
     public function getRemoveDirectory()
     {
-        return $this->fetchFromSharedInstancePool('\Net\Bazzline\Component\CommandCollection\Filesystem\Remove');
+        return $this->fetchFromSharedInstancePool(\Net\Bazzline\Component\CommandCollection\Filesystem\Remove::class);
     }
 
     /**

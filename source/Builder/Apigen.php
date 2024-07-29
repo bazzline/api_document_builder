@@ -24,11 +24,7 @@ class Apigen extends Command implements BuilderInterface
      */
     public function build()
     {
-        $options = array(
-            '--source ' . $this->sourcePath,
-            '--destination ' . $this->destinationPath,
-            '--title "' . $this->title . '"'
-        );
+        $options = ['--source ' . $this->sourcePath, '--destination ' . $this->destinationPath, '--title "' . $this->title . '"'];
 
         $command = __DIR__ . '/../../../../../../vendor/bin/apigen generate ' . implode(' ', $options);
 

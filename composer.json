@@ -14,6 +14,7 @@
     ],
     "type": "project",
     "minimum-stability": "dev",
+    "type": "library",
     "require": {
         "apigen/apigen": " 4.1.*",
         "net_bazzline/component_requirement": "1.2.*",
@@ -22,11 +23,12 @@
         "net_bazzline/php_component_command_collection": "0.0.*",
         "net_bazzline/php_component_locator_generator": "2.0.*",
         "net_bazzline/php_component_process_pipe": "1.1.*",
-        "php": ">=5.3.3"
+        "php": ">=7.1.0"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
-        "phpunit/phpunit": "~4.8||~5.6"
+        "phpunit/phpunit": "~9",
+        "rector/rector": "^1.2"
     },
     "license": "GPL-3.0",
     "authors": [

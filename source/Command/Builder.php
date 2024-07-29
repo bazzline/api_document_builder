@@ -20,9 +20,6 @@ class Builder
     /** @var string */
     private $source;
 
-    /**
-     * @param array $arguments
-     */
     function __construct(array $arguments)
     {
         $this->locator      = new ApplicationLocator();
@@ -51,7 +48,7 @@ class Builder
             $pathToCache        = $configuration['paths']['cache'];
             $pathToTarget       = $configuration['paths']['target'];
             $progressBar        = $locator->getCliProgressBar();
-            $projects           = array();
+            $projects           = [];
 
             $progressBar->setTotalSteps($numberOfProjects);
             echo 'updating projects ' . $numberOfProjects . PHP_EOL;
@@ -80,11 +77,7 @@ class Builder
                 $builder->setTitle($project['title']);
                 $builder->build();
 
-                $projects[] = array(
-                    'path'  => $identifier,
-                    'title' => $project['title'],
-                    'url'   => $project['url']
-                );
+                $projects[] = ['path'  => $identifier, 'title' => $project['title'], 'url'   => $project['url']];
                 $progressBar->forward();
             }
             $progressBar->isFinished();
@@ -92,10 +85,7 @@ class Builder
 
             //@todo move to separate method
             if (!isset($configuration['template'])) {
-                $configuration['template'] = array(
-                    'layout'        => __DIR__ . '/../Template/layout.html',
-                    'project_view'  => __DIR__ . '/../Template/project_view.html'
-                );
+                $configuration['template'] = ['layout'        => __DIR__ . '/../Template/layout.html', 'project_view'  => __DIR__ . '/../Template/project_view.html'];
             } else {
                 if (!isset($configuration['template']['layout'])) {
                     $configuration['template']['layout'] = __DIR__ . '/../Template/layout.html';
@@ -125,7 +115,6 @@ class Builder
 
     /**
      * @param string $fileName
-     * @param array $projects
      * @param string $title
      * @param string $pathToLayout
      * @param string $pathToProjectView
@@ -139,15 +128,15 @@ class Builder
 
         foreach ($projects as $project) {
             $projectData .= str_replace(
-                    array('{path}', '{title}', '{url}'),
-                    array($project['path'], $project['title'], $project['url']),
+                    ['{path}', '{title}', '{url}'],
+                    [$project['path'], $project['title'], $project['url']],
                     $projectView
             ) . PHP_EOL;
         }
 
         $layoutData = str_replace(
-            array('{last_updated_at}', '{projects}', '{title}'),
-            array(date('Y-m-d H:i:s'), $projectData, $title),
+            ['{last_updated_at}', '{projects}', '{title}'],
+            [date('Y-m-d H:i:s'), $projectData, $title],
             $layout
         );
 

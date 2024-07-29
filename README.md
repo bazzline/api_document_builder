@@ -34,6 +34,7 @@ lynx example/output/index.html
 
 * upcomming
     * @todo
+        * Add [php cs fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
         * implement usage of [template](https://github.com/bazzline/php_component_template/)
         * add link to current / latest tag (<path>/latest-release)
             * example link: https://github.com/bazzline/php_component_database_file_storage/releases/tag/0.6.2
@@ -59,6 +60,8 @@ lynx example/output/index.html
         * implement cache and output cleanup (if project is moved or deleted etc.)
             * validate git pull return message
         * supporting multiple project tags 
+    * @done
+        * Added rector
 * [1.3.0](https://github.com/bazzline/api_document_builder/tree/1.3.0) - released at 23.10.2016
     * releaxed dependency handling by using the asterix on the bug level version
 * [1.2.2](https://github.com/bazzline/api_document_builder/tree/1.2.2) - released at 15.03.2016
