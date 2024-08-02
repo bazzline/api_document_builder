@@ -23,7 +23,7 @@
         "net_bazzline/php_component_command_collection": "0.0.*",
         "net_bazzline/php_component_locator_generator": "2.0.*",
         "net_bazzline/php_component_process_pipe": "1.1.*",
-        "php": ">=7.1.0"
+        "php": "^8.1"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
